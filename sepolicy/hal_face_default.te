@@ -39,6 +39,8 @@ r_dir_file(hal_face_default, persist_camera_file)
 allow hal_face_default persist_file:dir search;
 allow hal_face_default mnt_vendor_file:dir search;
 allow hal_face_default system_app:fd use;
+allow hal_face_default system_app:binder call;
+binder_call(hal_face_default, system_app)
 
 # Grant incidentd access to the face HAL debug images
 userdebug_or_eng(`
@@ -69,3 +71,7 @@ allow hal_face_default traced:unix_stream_socket connectto;
 
 # Allow hal_face_default to write to traced_producer_socket
 allow hal_face_default traced_producer_socket:sock_file write;
+
+allow hal_face_default hal_face_debug_service:service_manager add;
+
+allow hal_face_default gxp_device:chr_file { open read write ioctl };
