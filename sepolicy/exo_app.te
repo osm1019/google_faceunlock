@@ -1,4 +1,4 @@
-type exo_app, coredomain, domain;
+type exo_app, domain;
 
 app_domain(exo_app)
 net_domain(exo_app)
