@@ -7,7 +7,7 @@ android_library {
 
     srcs: ["src/**/*.java"],
     static_libs: [
-        "StatixSettings-core",
+        "Settings-core",
     ],
     resource_dirs: [
         "res",
@@ -39,7 +39,7 @@ android_app {
         ],
     },
     overrides: [
-        "StatixSettings",
+        "Settings",
     ],
     manifest: ":Settings_manifest",
     additional_manifests: [
